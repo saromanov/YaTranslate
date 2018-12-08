@@ -5,8 +5,9 @@ using System.Net;
 namespace YaTranslate.Service {
 
     public class WebRequestFactory: IWebRequestFactory {
-        public WebRequestFactory() {
-
+        private Settings settings;
+        public WebRequestFactory(Settings settings) {
+            this.settings = settings;
         }
 
         private HttpWebRequest CreateGetReqeust(string url, string referer = "", Dictionary<string, string> headers = null){
@@ -16,5 +17,6 @@ namespace YaTranslate.Service {
             request.AllowAutoRedirect = true;
             request.Method = "GET"
         }
+        
     }
 }
