@@ -16,7 +16,8 @@ namespace YaTranslate.Service {
             request.UserAgent = settings.UserAgent;
             request.AllowAutoRedirect = true;
             request.Method = "GET"
+            return request;
         }
-        
+
     }
 }
