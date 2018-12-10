@@ -27,6 +27,15 @@ namespace YaTranslate.Service {
             return request
         }
 
+        public string UrlEncode(IDictionary<string, string> parameters)
+        {
+            var sb = new StringBuilder();
+            foreach (KeyValuePair<string, string> val in parameters)
+                sb.AppendFormat("{0}={1}&", val.Key, HttpUtility.UrlEncode(val.Value));
+            
+            sb.Remove(sb.Length - 1, 1); // remove last '&'
+            return sb.ToString();
+        }
         
 
     }
