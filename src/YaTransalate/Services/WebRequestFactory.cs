@@ -19,5 +19,15 @@ namespace YaTranslate.Service {
             return request;
         }
 
+        private HttpWebRequest CreatePostRequest(string url, string referer = "", Dictionary<string, string> headers = null) {
+            var request = (HttpWebRequest)WebRequest.Create(HttpUtility.UrlDecode(url));
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Headers["X-Requested-With"] = "XMLHttpRequest";
+            return request
+        }
+
+        
+
     }
 }
