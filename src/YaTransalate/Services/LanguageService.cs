@@ -1,6 +1,6 @@
 namespace YaTranslate.Services {
 
-    public class LanguageList {
+    public class LanguageList: ILanguageList {
         private readonly IWebRequestFactory factory;
         private readonly String endpoint = "https://translate.yandex.net/api/v1.5/tr.json/getLangs";
 
