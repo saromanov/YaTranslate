@@ -12,7 +12,7 @@ namespace YaTranslate.Services {
         public async Task GetLanguages(){
             try
             {
-                await getLanguagesRequest():
+                await getLanguagesRequest();
             }
             catch (TimeoutException)
             {

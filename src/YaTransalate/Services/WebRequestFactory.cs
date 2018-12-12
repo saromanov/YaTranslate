@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Net;
 
-namespace YaTranslate.Service {
+namespace YaTranslate.Services {
 
     public class WebRequestFactory: IWebRequestFactory {
         private Settings settings;
@@ -15,7 +15,7 @@ namespace YaTranslate.Service {
             request.ProtocolVersion = HttpVersion.Version11;
             request.UserAgent = settings.UserAgent;
             request.AllowAutoRedirect = true;
-            request.Method = "GET"
+            request.Method = "GET";
             return request;
         }
 
@@ -24,7 +24,7 @@ namespace YaTranslate.Service {
             request.Method = "POST";
             request.ContentType = "application/json";
             request.Headers["X-Requested-With"] = "XMLHttpRequest";
-            return request
+            return request;
         }
 
         public string UrlEncode(IDictionary<string, string> parameters)
