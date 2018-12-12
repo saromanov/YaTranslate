@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Net;
+using System.Collections.Generic;
 
 namespace YaTranslate.Services {
 
@@ -10,7 +11,7 @@ namespace YaTranslate.Services {
             this.settings = settings;
         }
 
-        private HttpWebRequest CreateGetReqeust(string url, string referer = "", Dictionary<string, string> headers = null){
+        public HttpWebRequest CreateGetRequest(string url, string referer = "", Dictionary<string, string> headers = null){
             var request = (HttpWebRequest)WebRequest.Create(HttpUtility.UrlDecode(url));
             request.ProtocolVersion = HttpVersion.Version11;
             request.UserAgent = settings.UserAgent;
@@ -19,7 +20,7 @@ namespace YaTranslate.Services {
             return request;
         }
 
-        private HttpWebRequest CreatePostRequest(string url, string referer = "", Dictionary<string, string> headers = null) {
+        public HttpWebRequest CreatePostRequest(string url, string referer = "", Dictionary<string, string> headers = null) {
             var request = (HttpWebRequest)WebRequest.Create(HttpUtility.UrlDecode(url));
             request.Method = "POST";
             request.ContentType = "application/json";
@@ -35,6 +36,10 @@ namespace YaTranslate.Services {
             
             sb.Remove(sb.Length - 1, 1); // remove last '&'
             return sb.ToString();
+        }
+
+        public Task CreatePostRequestAsync(HttpWebRequest request, Dictionary<string, string> parameters) {
+            
         }
         
 
