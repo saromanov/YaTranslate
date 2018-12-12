@@ -1,6 +1,6 @@
 using System.Net;
 using System.Threading.Tasks;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace YaTranslate.Services
 {

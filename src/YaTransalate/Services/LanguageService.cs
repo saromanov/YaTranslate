@@ -9,7 +9,7 @@ namespace YaTranslate.Services {
             this.factory = factory;
         }
 
-        public async Task GetLanguages(){
+        public async void GetLanguages(){
             try
             {
                 await getLanguagesRequest();
@@ -21,6 +21,10 @@ namespace YaTranslate.Services {
 
         public void getLanguagesRequest(){
             var response = factory.CreatePostRequest(endpoint);
+        }
+
+        public string[] GetLanguages(){
+            return new string[0];
         }
     }
 }
