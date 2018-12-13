@@ -1,4 +1,5 @@
 ﻿using System;
+using YaTranslate.Core;
 
 namespace YaTranslate
 {
