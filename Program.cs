@@ -7,6 +7,10 @@ namespace YaTranslate
     {
         static void Main(string[] args)
         {
+            if (args.Length == 0) {
+                System.Console.WriteLine("Please enter arguments");
+                return 1;
+            }
             using (ProgramCore core = new ProgramCore())
             {
                 core.Execute();
