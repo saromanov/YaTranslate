@@ -1,7 +1,8 @@
+using System;
 using YaTranslate.Services;
 
 namespace YaTranslate.Core {
-    public class ProgramCore {
+    public class ProgramCore : IDisposable{
 
         internal ProgramCore()
         {
@@ -10,6 +11,11 @@ namespace YaTranslate.Core {
 
         public void Execute() {
 
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
