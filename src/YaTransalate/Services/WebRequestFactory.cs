@@ -38,8 +38,8 @@ namespace YaTranslate.Services {
             return sb.ToString();
         }
 
-        public Task CreatePostRequestAsync(HttpWebRequest request, Dictionary<string, string> parameters) {
-            
+        public async Task<bool> CreatePostRequestAsync(HttpWebRequest request, Dictionary<string, string> parameters) {
+            return true;
         }
         
 

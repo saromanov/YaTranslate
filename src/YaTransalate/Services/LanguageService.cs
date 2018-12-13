@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace YaTranslate.Services {
 
@@ -21,8 +23,9 @@ namespace YaTranslate.Services {
             }
         }
 
-        public void getLanguagesRequest(){
+        public async Task<string> getLanguagesRequest(){
             var response = factory.CreatePostRequest(endpoint);
+            return "";
         }
 
         public string[] GetLanguages(){

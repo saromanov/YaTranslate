@@ -10,7 +10,7 @@ namespace YaTranslate.Services
 
         HttpWebRequest CreatePostRequest(string url, string referer = "", Dictionary<string, string> headers = null);
 
-        Task CreatePostRequestAsync(HttpWebRequest request, Dictionary<string, string> parameters);
+        Task<bool> CreatePostRequestAsync(HttpWebRequest request, Dictionary<string, string> parameters);
 
     }
 }
