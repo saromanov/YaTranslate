@@ -22,7 +22,7 @@ namespace YaTranslate
                    {
                        if (o.Languages)
                        {
-                           Console.WriteLine("Languages");
+                           core.Languages();
                        }
                    });
             }

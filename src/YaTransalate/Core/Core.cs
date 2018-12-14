@@ -7,7 +7,7 @@ namespace YaTranslate.Core {
         {   
         }
 
-        public void Execute() {
+        public void Languages() {
 
         }
 
