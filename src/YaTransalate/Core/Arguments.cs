@@ -9,8 +9,9 @@ namespace YaTranslate.Core {
      }
 
      private class ArgumentParser {
-         ArgumentParser(args[]string) {
-             
+         private string args;
+         public ArgumentParser([]string args) {
+             this.args = args;
          }
 
      }
