@@ -1,8 +1,15 @@
 ﻿using System;
 using YaTranslate.Core;
+using CommandLine;
 
 namespace YaTranslate
 {
+    public class Options
+    {
+        [Option('h', "help", Required = false, HelpText = "Showing of help info")]
+        public bool Verbose { get; set; }
+    }
+
     class Program
     {
         static void Main(string[] args)
