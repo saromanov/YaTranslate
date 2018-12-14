@@ -1,19 +1,26 @@
 using System;
 using CommandLine;
 
-namespace YaTranslate.Core {
-     private class Options
-     {
-         [Option('l', "languages", Required = false, HelpText = "Showing if list supported languages")]
-         public bool Languages { get; set; }
-     }
+public class Options
+{
+    [Option('l', "languages", Required = false, HelpText = "Showing if list supported languages")]
+        public bool Languages { get; set; }
+}
 
-     private class ArgumentParser {
-         private string args;
-         public ArgumentParser([]string args) {
-             this.args = args;
-         }
+public class ArgumentParser {
+    private string[] args;
+    public ArgumentParser(string[] args) {
+        args = args;
+    }
 
-     }
-
+    public void Run(){
+        Parser.Default.ParseArguments<Options>(args)
+                   .WithParsed<Options>(o =>
+                   {
+                       if (o.Languages)
+                       {
+                           Console.WriteLine("Languages");
+                       }
+                   });
+    }
 }
