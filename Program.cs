@@ -9,7 +9,7 @@ namespace YaTranslate
         {
             if (args.Length == 0) {
                 System.Console.WriteLine("Please enter arguments");
-                return 1;
+                return;
             }
             using (ProgramCore core = new ProgramCore())
             {
