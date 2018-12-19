@@ -15,17 +15,15 @@ namespace YaTranslate
     {
         static void Main(string[] args)
         {
-            using (ProgramCore core = new ProgramCore(args))
-            {
-                Parser.Default.ParseArguments<Options>(args)
-                   .WithParsed<Options>(o =>
+            ProgramCore core = new ProgramCore(args);
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed<Options>(o =>
                    {
                        if (o.Languages)
                        {
                            core.Languages();
                        }
                    });
-            }
         }
     }
 }
