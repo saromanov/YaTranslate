@@ -29,6 +29,8 @@ namespace YaTranslate.Services {
         }
 
         public string[] GetLanguages(){
+            var webRequest = new WebRequestFactory().CreatePostRequest(this.endpoint);
+            var response = new Response().Do(webRequest);
             return new string[0];
         }
 
