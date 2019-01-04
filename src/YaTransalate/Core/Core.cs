@@ -3,7 +3,7 @@ using YaTranslate.Services;
 
 namespace YaTranslate.Core {
     public class ProgramCore : IDisposable{
-        private llist ILanguageList;
+        private readonly ILanguageList llist;
         internal ProgramCore(string[] args)
         {   
             llist = new LanguageList();
