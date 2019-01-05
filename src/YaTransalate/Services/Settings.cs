@@ -1,6 +1,6 @@
 namespace YaTranslate.Services {
 
-    public class Settings {
+    public struct Settings {
         public string Token {get;set;}
     } 
 }

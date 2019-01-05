@@ -11,6 +11,10 @@ namespace YaTranslate.Core {
         }
 
         public void Languages() {
+            var webRequest = new WebRequestFactory(new Settings{
+                Token= "123",
+            });
+            llist = new LanguageList(webRequest);
             llist.Output();
         }
 
