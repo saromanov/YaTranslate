@@ -6,7 +6,7 @@ namespace YaTranslate.Services {
 
         public Response(){}
 
-        public bool Do(IWebRequestFactory factory) {
+        public bool Do(HttpWebRequest factory) {
             return true;
         }
     }

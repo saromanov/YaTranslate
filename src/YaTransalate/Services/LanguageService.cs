@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 namespace YaTranslate.Services {
 
     public class LanguageList: ILanguageList, IOutput {
-        private readonly IWebRequestFactory factory;
-        private readonly string endpoint = "https://translate.yandex.net/api/v1.5/tr.json/getLangs";
-        private string token {private set; get;}
+        private IWebRequestFactory factory;
+        private string endpoint = "https://translate.yandex.net/api/v1.5/tr.json/getLangs";
 
         public LanguageList(IWebRequestFactory factory){
             this.factory = factory;
@@ -29,7 +28,7 @@ namespace YaTranslate.Services {
         }
 
         public string[] GetLanguages(){
-            var webRequest = new WebRequestFactory().CreatePostRequest(this.endpoint);
+            var webRequest = this.factory.CreatePostRequest(this.endpoint);
             var response = new Response().Do(webRequest);
             return new string[0];
         }
